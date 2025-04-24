@@ -71,7 +71,7 @@ const Navbar = () => {
                 </g>
             </svg>
           </span>
-          <span className="font-bold">T-Shirt</span>
+          <span className="font-bold hidden sm:block">T-Shirt</span>
         </div>
         <div className="hidden grow items-start lg:flex">
           <ul className="ml-12 inline-flex space-x-8">
@@ -91,24 +91,24 @@ const Navbar = () => {
           </ul>
         </div>
         {isAuthenticated?
-          <div className="hidden space-x-2 lg:flex items-center" >
+          <div className="space-x-2 flex items-center" >
             <span>{user.name}</span>
             {user.role == 0 && (
-              <span className='cursor-pointer' onClick={()=>navigate('/user/cart')}>
-                <span className='test-xs px-3 bg-red-200 text-red-800 rounded-full'> {cart?.products?.length || 0} </span>
-                <ShoppingCart />
+              <span className='cursor-pointer text-xs' onClick={()=>navigate('/user/cart')}>
+                <span className='text-xs md:text-sm px-2 bg-red-200 text-red-800 rounded-full'> {cart?.products?.length || 0} </span>
+                <ShoppingCart className='h-4 md:h-6'/>
               </span>
             )}
             <button 
               onClick={logout}
               type='button'
-              className="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              className="hidden sm:block rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
               Logout
             </button>
           </div>
         :
-          <div className="hidden space-x-2 lg:block">
+          <div className="hidden gap-3 space-x-3 lg:block">
             <button 
               onClick={() => goToPath('/signup')}
               type="button"
@@ -127,7 +127,7 @@ const Navbar = () => {
           </div>
         }
         
-          <div className="lg:hidden">
+          <div className="sm:hidden">
           <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
         </div>
         {isMenuOpen && (
