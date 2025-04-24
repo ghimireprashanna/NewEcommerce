@@ -41,6 +41,11 @@ app.use('/api/products',productRoute);
 app.use('/api/upload-files',uploadFileRoute);
 app.use('/api/carts',cartRoute);
 app.use('/api/orders',orderRoute);
+app.use('/api/esewa',esewaRoute);
+app.use('/health',(req, res)=>{
+    res.json({"message": "your app is running"})
+});
+
 
 
 app.use(`/api/uploads`, express.static('uploads'))
