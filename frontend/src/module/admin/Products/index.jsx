@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../context/auth/AuthContext'
 import { ToastContext } from '../../../context/toast/ToastContext'
 import axios from 'axios'
-import Modal from '../../common/Modal'
 import SignUp from '../../auth/Signup'
 import EditProduct from './components/EditProduct'
 import { apiUrl } from '../../../constant'
+import Modal from '../../common/modal'
 
 export default function Products() {
 
