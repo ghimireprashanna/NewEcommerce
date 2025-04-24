@@ -5,7 +5,7 @@ import axios from 'axios'
 import SignUp from '../../auth/Signup'
 import EditProduct from './components/EditProduct'
 import { apiUrl } from '../../../constant'
-import Modal from '../../common/modal'
+import Modal from '../../common/Modal.jsx'
 
 export default function Products() {
 
