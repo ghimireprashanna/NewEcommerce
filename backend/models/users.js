@@ -35,9 +35,9 @@ const userSchema = new Schema({
 })
 
 //this will turn plain password to hash password
-userSchema.virtual('password').set(function (plainpassword){
+userSchema.virtual('password').set(function (plainpassword) {
     const salt = bcrypt.genSaltSync()
-    const hassedpass = bcrypt.hashSync(plainpassword,salt)
+    const hassedpass = bcrypt.hashSync(plainpassword, salt)
     this.hash_password = hassedpass
 })
 
@@ -49,4 +49,4 @@ userSchema.methods = {
     }
 }
 
-module.exports = mongoose.model('User',userSchema)
+module.exports = mongoose.model('User', userSchema)
