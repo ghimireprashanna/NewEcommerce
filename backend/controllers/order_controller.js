@@ -1,4 +1,5 @@
 const Order = require('../models/order');
+const CryptoJS = require('crypto-js');
 
 exports.getOrderById = async (req, res, next, id) => {
     try {
@@ -41,6 +42,13 @@ exports.createOrder = async (req, res) => {
         console.log(req.body);
         const order = new Order(req.body);
         const createdOrder = await order.save()
+
+        const message = `total_amount=${createdOrder.amount}transaction_uuid=11-201-13,product_code=EPAYTEST`
+        const secret = '8gBm/:&EnhH.1/q'
+        hash = CryptoJS.HmacSHA256("Message", "secret");
+        var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+
+
         res.json({ message: "Order Created Sucessfully", order: createdOrder });
     } catch (err) {
         return res.status(400).json({ error: err?.message || 'No Orders found' });

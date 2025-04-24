@@ -89,6 +89,55 @@ export default function Cart() {
   setValues({...values})
 })
 
+const createOrderApi = (payload) => {
+  let token = localStorage.getItem('token');
+  axios.post(`${apiUrl}/api/orders/create/${user._id}`, {products: payload}, {
+    headers:{
+      Authorization: `Bearer ${token}`
+    }
+  })
+  .then(res =>{
+    esewaCall(res.data.order)
+  })
+  .catch(err => console.log(err))
+}
+
+
+const esewaCall = (order) => {
+  console.log(order);
+  var path = "https://uat.esewa.com.np/api/epay/main";
+  var params = {
+      amount: order.amount,
+      product_service_charge: 0,
+      product_delivery_charge: 0,
+      tax_amount: 0,
+      total_amount: order.amount,
+      transaction_uuid: order._id,
+      product_code: "EPAYTEST",
+      su: "http://localhost:5173/users/esewa_payment_success",
+      fu: "http://localhost:5173/users/esewa_payment_failed",
+      signature: order.hashInBase64,
+      signed_field_names: "total_amount,transaction_uuid,product_code"
+    }
+
+  console.log(params);
+
+  var form = document.createElement("form");
+  form.setAttribute("method", "POST");
+  form.setAttribute("action", path);
+
+  for (var key in params) {
+      var hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", key);
+      hiddenField.setAttribute("value", params[key]);
+      form.appendChild(hiddenField);
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+}
+
         return (
           <div className="max-auto max-w-7xl px-2 lg:px-0">
             <div className="max-auto max-w-2xl py-8 lg:max-w-7xl">
@@ -128,7 +177,16 @@ export default function Cart() {
               </section>
       
               {/* Order Summary Section */}
-              <CartSummary products={values.products}/>
+              <CartSummary
+  products={values.products}
+  onClickCheckout={() => {
+    if (!user || !user._id) {
+      alert("Please login to continue");
+      return;
+    }
+    createOrderApi(values.products);
+  }}
+/>
             </Form>
             </FormikProvider>
           </div>
