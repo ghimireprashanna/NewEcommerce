@@ -4,7 +4,7 @@ import { apiUrl } from '../../../constant'
 import { ToastContext } from '../../../context/toast/ToastContext'
 import axios from 'axios'
 import SignUp from '../../auth/Signup'
-import Modal from '../../common/modal'
+import Modal from '../../common/Modal.jsx'
 import EditUser from './components/EditUser'
 
 
