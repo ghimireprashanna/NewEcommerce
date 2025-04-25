@@ -111,11 +111,12 @@ export default function Products() {
       <td className="whitespace-nowrap px-4 py-4">
         <div className="flex items-center">
           <div className="h-10 w-10 flex-shrink-0">
-            <img
-              className="h-10 w-10 rounded-full object-cover"
-              src={`${apiUrl}/api/${product.image}`}
-              alt=""
-            />
+          <img
+  className="h-10 w-10 rounded-full object-cover"
+  src={product.image.startsWith('https') ? product.image : `${apiUrl}/api/${product.image}`}
+  alt={product.title || 'Product'}
+/>
+
           </div>
           <div className="ml-4">
             <div className="text-sm font-medium text-gray-900">{product.title}</div>
