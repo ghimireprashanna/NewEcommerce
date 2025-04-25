@@ -112,7 +112,7 @@ export default function Products() {
         <div className="flex items-center">
           <div className="h-10 w-10 flex-shrink-0">
             <img
-              className="h-10 w-10 rounded-full object-cover"
+              className="h-10 w-10  object-cover rounded-full "
               src={`${apiUrl}/api/${product.image}`}
               alt=""
             />
