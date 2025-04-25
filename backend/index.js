@@ -15,11 +15,6 @@ const orderRoute = require('./routes/order');
 const app = express()
 var cors = require('cors');
 
-app.use(cors({
-  origin: 'https://new-ecommerce-sage.vercel.app/',
-  methods: ['POST', 'GET'],
-}));
-
 
 const hostname = '127.0.0.1';
 const port = 5000;
@@ -27,7 +22,7 @@ const port = 5000;
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-
+app.use(cors());
 app.options('*',cors());
 
 //mongodb+srv://prashanna:Prashanna11@cluster1.6qhu0jn.mongodb.net/?retryWrites=true&w=majority
