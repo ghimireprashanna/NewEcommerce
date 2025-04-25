@@ -102,7 +102,7 @@ const Navbar = () => {
             <button 
               onClick={logout}
               type='button'
-              className="hidden sm:block rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              className="hidden lg:block rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
               Logout
             </button>
@@ -127,7 +127,7 @@ const Navbar = () => {
           </div>
         }
         
-          <div className="sm:hidden">
+          <div className="block lg:hidden">
           <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
         </div>
         {isMenuOpen && (
@@ -150,7 +150,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </span>
-                    <span className="font-bold">DevUI</span>
+                    <span className="font-bold">T-Shirt</span>
                   </div>
                   <div className="-mr-2">
                     <button
@@ -165,7 +165,7 @@ const Navbar = () => {
                 </div>
                 <div className="mt-6">
                   <nav className="grid gap-y-4">
-                    {menuItems.map((item) => (
+                    {userMenuItem.map((item) => (
                       <Link
                         key={item.name}
                         to={item.href}
@@ -179,6 +179,35 @@ const Navbar = () => {
                     ))}
                   </nav>
                 </div>
+
+
+
+
+                {isAuthenticated?
+          <div className="space-x-2 flex items-center" >
+            
+            
+            <button 
+              onClick={logout}
+              type='button'
+              className=" w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            >
+              Logout from <span>{user.name}</span>
+            </button>
+            
+          </div>
+        
+          
+        
+
+
+
+
+
+
+
+
+                :
                 <div className="mt-2 space-y-2">
                   <button 
                     onClick={() => goToPath('/signup')}
@@ -195,6 +224,7 @@ const Navbar = () => {
                     Log In
                   </button>
                 </div>
+        }
               </div>
             </div>
           </div>
