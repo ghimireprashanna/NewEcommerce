@@ -51,7 +51,7 @@ const Footer = () => {
           <div className="w-auto p-8">
             <div className="-m-1.5 flex ">
               <div className="w-auto p-1.5">
-                <a href="#">
+                <a href="https://www.facebook.com/prashanna.ghimire.88977">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="8"
@@ -69,7 +69,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="w-auto p-1.5">
-                <a href="#">
+                <a href="https://x.com/PrashannaGhim16">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="14"
@@ -87,7 +87,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="w-auto p-1.5">
-                <a href="#">
+                <a href="https://www.instagram.com/ghimire.prashanna/">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
                     <svg
                       width="16"
