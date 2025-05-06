@@ -18,8 +18,8 @@ import UploadProvider from './context/uploadfile/UploadProvider.jsx'
 import Cart from './module/user/Cart/index.jsx'
 import CartProvider from './context/cart/CartProvider.jsx'
 import AdminPrivateRoute from './routes/AdminPrivateRoute.jsx'
-import About from './module/About/about.jsx'
-import Contact from './module/contact/contact.jsx'
+import About from './module/about_temp/about.jsx'
+import Contact from './module/contact/Contact.jsx'
 
 const router= createBrowserRouter([
   {
