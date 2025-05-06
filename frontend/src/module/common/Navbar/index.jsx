@@ -61,7 +61,7 @@ const Navbar = () => {
     <div className="relative w-full bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
-          <span>
+          <span onClick={()=>navigate('/')}>
             <svg width="30"
               height="30" fill="#000000" viewBox="-1 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
