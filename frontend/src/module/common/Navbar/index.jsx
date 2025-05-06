@@ -14,12 +14,12 @@ const menuItems = [
     },
     {
       name: 'About',
-      href: '/',
+      href: '/about',
       role : [0, 1]
     },
     {
       name: 'Contact',
-      href: '/',
+      href: '/contact',
       role : [0, 1]
     },
     {
