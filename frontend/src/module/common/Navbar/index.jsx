@@ -71,7 +71,7 @@ const Navbar = () => {
                 </g>
             </svg>
           </span>
-          <span className="font-bold hidden sm:block">T-Shirt</span>
+          <span onClick={()=>navigate('/home')} className="font-bold hidden sm:block">T-Shirt</span>
         </div>
         <div className="hidden grow items-start lg:flex">
           <ul className="ml-12 inline-flex space-x-8">
