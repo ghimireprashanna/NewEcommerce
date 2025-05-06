@@ -136,7 +136,7 @@ const Navbar = () => {
               <div className="px-5 pb-6 pt-5">
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center space-x-2">
-                    <span>
+                    <span onClick={()=>navigate('/')}>
                       <svg
                         width="30"
                         height="30"
@@ -150,7 +150,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </span>
-                    <span className="font-bold">T-Shirt</span>
+                    <span onClick={()=>navigate('/')} className="font-bold">T-Shirt</span>
                   </div>
                   <div className="-mr-2">
                     <button

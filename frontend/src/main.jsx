@@ -18,6 +18,8 @@ import UploadProvider from './context/uploadfile/UploadProvider.jsx'
 import Cart from './module/user/Cart/index.jsx'
 import CartProvider from './context/cart/CartProvider.jsx'
 import AdminPrivateRoute from './routes/AdminPrivateRoute.jsx'
+import About from './module/About/about.jsx'
+import Contact from './module/contact/contact.jsx'
 
 const router= createBrowserRouter([
   {
@@ -27,6 +29,12 @@ const router= createBrowserRouter([
       {
         path: "/",
         element:  <Home/> 
+      },{
+        path: "/about",
+        element:  <About/> 
+      },{
+        path: "/contact",
+        element:  <Contact/>
       },
       {
         path: "/signup",
